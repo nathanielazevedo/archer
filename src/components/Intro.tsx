@@ -25,9 +25,9 @@ const Intro = () => {
       <Navbar />
       <Hero setOpen={setDialogOpen} />
       <SectionOne />
-      <SectionTwo />
-      <SectionThree />
-      <SectionFour />
+      <SectionTwo setOpen={setDialogOpen} />
+      <SectionThree setOpen={setDialogOpen} />
+      <SectionFour setOpen={setDialogOpen} />
       <Faq />
       <Footer />
       <RequestDialog open={dialogOpen} setOpen={setDialogOpen} />

@@ -4,7 +4,7 @@ import creator from "../assets/creator.png";
 import mobile from "../assets/mobile.png";
 import web from "../assets/web.png";
 
-const SectionTwo = () => {
+const SectionTwo = ({ setOpen }: { setOpen: (val: boolean) => void }) => {
   const cards = [
     {
       title: "Install",
@@ -32,20 +32,19 @@ const SectionTwo = () => {
         flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
-        padding: "100px",
-        height: "100vh",
+        padding: { xs: "150px 0", lg: "100px" },
         backgroundColor: "#060816",
       }}
     >
       <Box
         sx={{
-          width: "1100px",
+          width: { xs: "90%", lg: "1200px" },
         }}
       >
         <Box
           sx={{
             display: "flex",
-            justifyContent: "space-between",
+            justifyContent: { xs: "flex-start", lg: "space-between" },
             alignItems: "center",
             marginBottom: "30px",
           }}
@@ -67,6 +66,7 @@ const SectionTwo = () => {
             <Button
               variant="contained"
               fullWidth
+              onClick={() => setOpen(true)}
               sx={{
                 height: "50px",
                 marginTop: "20px",
@@ -77,19 +77,29 @@ const SectionTwo = () => {
               Request Access
             </Button>
           </Box>
-          <img
-            src={polygons}
-            alt=""
-            style={{ width: "300px", marginRight: "70px" }}
-          />
+          <Box
+            sx={{
+              display: { xs: "none", lg: "block" },
+            }}
+          >
+            <img
+              src={polygons}
+              alt=""
+              style={{
+                width: "300px",
+                marginRight: "70px",
+              }}
+            />
+          </Box>
         </Box>
         <Box
           sx={{
             display: "flex",
             alignItems: "center",
-            height: "320px",
+            height: { lg: "320px" },
             gap: "50px",
             marginTop: "100px",
+            flexDirection: { xs: "column", lg: "row" },
           }}
         >
           {cards.map((card, i) => {
@@ -99,7 +109,7 @@ const SectionTwo = () => {
                   display: "flex",
                   flexDirection: "column",
                   position: "relative",
-                  width: "800px",
+                  width: { xs: "100%", lg: "800px" },
                 }}
               >
                 <div

@@ -18,7 +18,7 @@ export default function Faq() {
     <Box
       sx={{
         backgroundColor: "white",
-        padding: "70px 150px",
+        padding: { xs: "100px 20px", lg: "70px 150px" },
         borderRadius: "10px",
       }}
     >
@@ -26,8 +26,8 @@ export default function Faq() {
         variant="h4"
         sx={{
           color: "black",
-          marginBottom: "15px",
           fontWeight: "bold",
+          marginBottom: "30px",
         }}
       >
         Frequently Asked Questions
@@ -42,7 +42,7 @@ export default function Faq() {
             aria-controls="panel1bh-content"
             id="panel1bh-header"
           >
-            <Typography sx={{ width: "33%", flexShrink: 0 }}>
+            <Typography sx={{ flexShrink: 0 }}>
               How much does it cost?
             </Typography>
           </AccordionSummary>
@@ -59,7 +59,7 @@ export default function Faq() {
             aria-controls="panel2bh-content"
             id="panel2bh-header"
           >
-            <Typography sx={{ width: "33%", flexShrink: 0 }}>
+            <Typography sx={{ flexShrink: 0 }}>
               What's the range of the device?
             </Typography>
           </AccordionSummary>
@@ -78,7 +78,7 @@ export default function Faq() {
             aria-controls="panel3bh-content"
             id="panel3bh-header"
           >
-            <Typography sx={{ width: "33%", flexShrink: 0 }}>
+            <Typography sx={{ flexShrink: 0 }}>
               How long does one charge last?
             </Typography>
           </AccordionSummary>
@@ -97,7 +97,7 @@ export default function Faq() {
             aria-controls="panel4bh-content"
             id="panel4bh-header"
           >
-            <Typography sx={{ width: "33%", flexShrink: 0 }}>
+            <Typography sx={{ flexShrink: 0 }}>
               How long does it take to charge?
             </Typography>
           </AccordionSummary>

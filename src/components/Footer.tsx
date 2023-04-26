@@ -5,36 +5,47 @@ const Footer = () => {
   return (
     <Box
       sx={{
-        height: "20vh",
+        height: "40vh",
         display: "flex",
         flexDirection: "row",
-        justifyContent: "space-between",
+        justifyContent: "center",
         alignItems: "center",
-        padding: "0 10rem",
         backgroundColor: "#060816",
+        maxWidth: "100vw",
       }}
     >
-      <Box>
-        <Typography
-          sx={{
-            fontWeight: 400,
-            fontSize: "1.7rem",
-            letterSpacing: ".3rem",
-          }}
-        >
-          ARCHER
-        </Typography>
-        <Typography
-          sx={{
-            textDecoration: "italic",
-          }}
-        >
-          Copyright 2023
-        </Typography>
-        <Typography>All Rights Reserved</Typography>
-      </Box>
-      <Box>
-        <img src={polygons} alt="" style={{ width: "170px" }} />
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: "row",
+          justifyContent: "space-between",
+          alignItems: "center",
+          backgroundColor: "#060816",
+          width: { xs: "90%", sm: "90%", lg: "1200px" },
+        }}
+      >
+        <Box>
+          <Typography
+            sx={{
+              fontWeight: 400,
+              fontSize: "1.7rem",
+              letterSpacing: ".3rem",
+            }}
+          >
+            ARCHER
+          </Typography>
+          <Typography
+            sx={{
+              fontStyle: "italic",
+            }}
+          >
+            Copyright @2023
+          </Typography>
+          <Typography>All Rights Reserved</Typography>
+        </Box>
+        <Box>
+          <img src={polygons} alt="" style={{ width: "170px" }} />
+        </Box>
       </Box>
     </Box>
   );

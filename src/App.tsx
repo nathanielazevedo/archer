@@ -54,6 +54,7 @@ const App = () => {
         <Box
           sx={{
             minHeight: "calc(100vh - 68.5px)",
+            maxWidth: "100vw",
           }}
         >
           <RouterProvider router={router} />

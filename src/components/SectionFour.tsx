@@ -1,15 +1,7 @@
 import { Box, Button, Typography } from "@mui/material";
-import {
-  CartesianGrid,
-  Legend,
-  Line,
-  LineChart,
-  Tooltip,
-  XAxis,
-  YAxis,
-} from "recharts";
+import { CartesianGrid, Line, LineChart, Tooltip, XAxis } from "recharts";
 
-const SectionFour = () => {
+const SectionFour = ({ setOpen }: { setOpen: (val: boolean) => void }) => {
   const data = [
     {
       name: "5/10",
@@ -43,75 +35,62 @@ const SectionFour = () => {
   return (
     <Box
       sx={{
-        height: "70vh",
         display: "flex",
-        flexDirection: "column",
         alignItems: "center",
-        padding: "150px 180px",
-        backgroundColor: "#060816",
+        justifyContent: "center",
+        padding: "150px 0",
       }}
     >
-      <Box>
-        <Typography
-          variant="h4"
-          fontWeight="bold"
-          sx={{
-            color: "white",
-          }}
-        >
-          Make Data Driven Decisions
-        </Typography>
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: { xs: "column-reverse", lg: "row" },
+          maxWidth: { xs: "90%", lg: "1200px" },
+          width: { xs: "90%", lg: "1200px" },
+          gap: { xs: "70px" },
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <LineChart width={350} height={300} data={data}>
+          <CartesianGrid strokeDasharray="3 3" />
+          <XAxis dataKey="name" />
+          <Tooltip />
+          <Line type="monotone" dataKey="main_ranch" stroke="#8884d8" />
+        </LineChart>
         <Box
           sx={{
-            display: "flex",
-            flexDirection: "row",
-            justifyContent: "space-evenly",
-            alignItems: "center",
-            marginTop: "5%",
+            maxWidth: "550px",
+            alignSelf: { xs: "flex-start", lg: "center" },
           }}
         >
-          <LineChart width={630} height={300} data={data}>
-            <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="name" />
-            <YAxis
-              label={{
-                value: "hours",
-                angle: -90,
-                position: "insideLeft",
-              }}
-            />
-            <Tooltip />
-            <Legend />
-            <Line type="monotone" dataKey="main_ranch" stroke="#8884d8" />
-          </LineChart>
-          <Box sx={{ marginLeft: "50px" }}>
-            <Typography
-              variant="h5"
-              sx={{
-                fontWeight: "bold",
-              }}
-            >
-              Data
-            </Typography>
-            <Typography>
-              Analyze your irrigation process with precission. Stop relying on
-              antecdotes, and start making decisions based on data.
-            </Typography>
-            <Button
-              variant="contained"
-              sx={{
-                width: "100%",
-                height: "50px",
-                fontSize: "1rem",
-                marginTop: "20px",
-                background:
-                  "radial-gradient(926px at 2.7% 11%, #30a7d0 0%, rgb(178, 31, 102) 90%)",
-              }}
-              color="success"
-            >
-              Request Access
-            </Button>
-          </Box>
+          <Typography
+            variant="h4"
+            sx={{
+              fontWeight: "bold",
+            }}
+          >
+            Make Data Driven Decisions
+          </Typography>
+          <Typography>
+            Analyze your irrigation process with precission. Stop relying on
+            antecdotes, and start making decisions based on data.
+          </Typography>
+          <Button
+            variant="contained"
+            onClick={() => setOpen(true)}
+            sx={{
+              width: "100%",
+              height: "50px",
+              fontSize: "1rem",
+              marginTop: "20px",
+              background:
+                "radial-gradient(926px at 2.7% 11%, #30a7d0 0%, rgb(178, 31, 102) 90%)",
+            }}
+            color="success"
+          >
+            Request Access
+          </Button>
         </Box>
       </Box>
     </Box>

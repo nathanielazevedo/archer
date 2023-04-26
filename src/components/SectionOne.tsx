@@ -7,6 +7,7 @@ const SectionOne = () => {
       sx={{
         backgroundColor: "white",
         display: "flex",
+
         justifyContent: "center",
         alignItems: "center",
         padding: "70px 0 ",
@@ -17,9 +18,10 @@ const SectionOne = () => {
         sx={{
           display: "flex",
           justifyContent: "space-between",
+          flexDirection: { xs: "column", lg: "row" },
           alignItems: "center",
-          width: "100%",
-          maxWidth: "1100px",
+          width: { xs: "90%", lg: "100%" },
+          maxWidth: "1200px",
         }}
       >
         <Box>
@@ -38,6 +40,7 @@ const SectionOne = () => {
             justifyContent: "center",
             alignItems: "center",
             width: "60%",
+            paddingTop: { xs: "50px", lg: "0" },
           }}
         >
           <img src={app_store} width="200px"></img>

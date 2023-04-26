@@ -14,11 +14,7 @@ export default function ControlledAccordions() {
     };
 
   return (
-    <div
-      style={{
-        width: "70%",
-      }}
-    >
+    <div>
       <Accordion
         expanded={expanded === "panel1"}
         onChange={handleChange("panel1")}
@@ -28,7 +24,7 @@ export default function ControlledAccordions() {
           aria-controls="panel1bh-content"
           id="panel1bh-header"
         >
-          <Typography sx={{ width: "33%", flexShrink: 0 }}>
+          <Typography sx={{ width: "50%", flexShrink: 0 }}>
             August Piece
           </Typography>
           <Typography sx={{ color: "text.secondary" }}>Inactive</Typography>
@@ -49,7 +45,7 @@ export default function ControlledAccordions() {
           aria-controls="panel2bh-content"
           id="panel2bh-header"
         >
-          <Typography sx={{ width: "33%", flexShrink: 0 }}>
+          <Typography sx={{ width: "50%", flexShrink: 0 }}>
             Lander Field
           </Typography>
           <Typography sx={{ color: "text.secondary" }}>Active</Typography>
@@ -71,7 +67,7 @@ export default function ControlledAccordions() {
           aria-controls="panel3bh-content"
           id="panel3bh-header"
         >
-          <Typography sx={{ width: "33%", flexShrink: 0 }}>Bookers</Typography>
+          <Typography sx={{ width: "50%", flexShrink: 0 }}>Bookers</Typography>
           <Typography sx={{ color: "text.secondary" }}>Inactive</Typography>
         </AccordionSummary>
         <AccordionDetails>
@@ -90,7 +86,7 @@ export default function ControlledAccordions() {
           aria-controls="panel4bh-content"
           id="panel4bh-header"
         >
-          <Typography sx={{ width: "33%", flexShrink: 0 }}>
+          <Typography sx={{ width: "50%", flexShrink: 0 }}>
             Goya Field
           </Typography>
           <Typography sx={{ color: "text.secondary" }}>Inactive</Typography>
