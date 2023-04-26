@@ -1,5 +1,4 @@
 import { Box, Button, Typography } from "@mui/material";
-import React from "react";
 import {
   CartesianGrid,
   Legend,
@@ -9,7 +8,6 @@ import {
   XAxis,
   YAxis,
 } from "recharts";
-import PrecisionManufacturingIcon from "@mui/icons-material/PrecisionManufacturing";
 
 const SectionFour = () => {
   const data = [

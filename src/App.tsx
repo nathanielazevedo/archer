@@ -5,7 +5,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./components/Home";
 import Intro from "./components/Intro";
 import Navbar from "./components/Navbar";
-import { createContext, useContext, useState } from "react";
+import { createContext, useState } from "react";
 
 const theme = createTheme({
   palette: {
@@ -46,8 +46,8 @@ const router = createBrowserRouter([
 export const Context = createContext<any>(null);
 
 const App = () => {
-  const [val, setVal] = useState(true);
-  console.log("render");
+  const setVal = useState(true)[0];
+
   return (
     <ThemeProvider theme={theme}>
       <Context.Provider value={setVal}>

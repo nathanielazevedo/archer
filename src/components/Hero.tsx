@@ -1,9 +1,7 @@
 import { Box, Button, Typography } from "@mui/material";
-import polygons from "../assets/polygons.png";
-import bg from "../assets/herobg.png";
 import hero from "../assets/hero.png";
 
-const Hero = ({ setOpen }: any) => {
+const Hero = ({ setOpen }: { setOpen: (val: boolean) => void }) => {
   return (
     <Box
       sx={{
@@ -14,28 +12,15 @@ const Hero = ({ setOpen }: any) => {
         maxWidth: "100vw",
         backgroundColor: "#060816",
         paddingLeft: "200px",
-
-        // backgroundImage: `url(${bg})`,
-        // backgroundRepeat: "no-repeat",
-        // backgroundSize: "cover",
-        // backgroundPosition: "center",
       }}
     >
       <Box
         sx={{
           width: "500px",
           zIndex: 1,
-          // marginRigth: "100px",
         }}
       >
-        <Typography
-          variant="h2"
-          sx={{
-            fontWeight: "bold",
-          }}
-          mb={0.5}
-          // color="success"
-        >
+        <Typography variant="h2" sx={{ fontWeight: "bold" }} mb={0.5}>
           Modern Irrigation
         </Typography>
         <Typography mb={3}>
@@ -71,7 +56,6 @@ const Hero = ({ setOpen }: any) => {
           right: "100px",
         }}
       />
-      {/* <div style={{ width: "400px" }}></div> */}
     </Box>
   );
 };

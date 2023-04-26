@@ -1,5 +1,5 @@
-import { Box, Typography } from "@mui/material";
-import React, { useEffect } from "react";
+import { Box } from "@mui/material";
+import { useEffect } from "react";
 import Fields from "./Fields";
 import { useNavigate } from "react-router-dom";
 

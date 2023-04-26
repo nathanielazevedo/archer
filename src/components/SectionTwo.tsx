@@ -1,6 +1,4 @@
 import { Box, Button, Card, Typography } from "@mui/material";
-import AgricultureIcon from "@mui/icons-material/Agriculture";
-import NotificationsActiveIcon from "@mui/icons-material/NotificationsActive";
 import polygons from "../assets/polygons.png";
 import creator from "../assets/creator.png";
 import mobile from "../assets/mobile.png";
