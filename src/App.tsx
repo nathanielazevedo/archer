@@ -32,6 +32,10 @@ const router = createBrowserRouter([
     element: <Intro />,
   },
   {
+    path: "",
+    element: <Intro />,
+  },
+  {
     path: "/login",
     element: (
       <>
@@ -51,6 +55,7 @@ const router = createBrowserRouter([
   },
 ]);
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const Context = createContext<any>(null);
 
 const App = () => {
