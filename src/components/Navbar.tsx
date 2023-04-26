@@ -16,7 +16,7 @@ import { Context } from "../App";
 // import MenuItem from "@mui/material/MenuItem";
 // import AdbIcon from "@mui/icons-material/Adb";
 
-const outPages = ["Pricing", "Login"];
+const outPages = ["Login"];
 const inPages = ["Logout"];
 
 function ResponsiveAppBar() {

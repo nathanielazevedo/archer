@@ -105,7 +105,6 @@ const SectionFour = () => {
                 width: "100%",
                 height: "50px",
                 fontSize: "1rem",
-                fontWeight: "bold",
                 marginTop: "20px",
                 background:
                   "radial-gradient(926px at 2.7% 11%, #30a7d0 0%, rgb(178, 31, 102) 90%)",

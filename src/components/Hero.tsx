@@ -3,7 +3,7 @@ import polygons from "../assets/polygons.png";
 import bg from "../assets/herobg.png";
 import hero from "../assets/hero.png";
 
-const Hero = () => {
+const Hero = ({ setOpen }: any) => {
   return (
     <Box
       sx={{
@@ -50,11 +50,11 @@ const Hero = () => {
             width: "100%",
             height: "50px",
             fontSize: "1rem",
-            fontWeight: "bold",
             background:
               "radial-gradient(926px at 2.7% 11%, #30a7d0 0%, rgb(178, 31, 102) 90%)",
           }}
           color="success"
+          onClick={() => setOpen(true)}
         >
           Request Access
         </Button>

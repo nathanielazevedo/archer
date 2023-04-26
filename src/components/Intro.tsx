@@ -8,9 +8,11 @@ import SectionThree from "./SectionThree";
 import { useNavigate } from "react-router-dom";
 import SectionFour from "./SectionFour";
 import Faq from "./Faq";
+import RequestDialog from "./RequestDialog";
 
 const Intro = () => {
   const navigate = useNavigate();
+  const [dialogOpen, setDialogOpen] = React.useState(false);
   const user = JSON.parse(localStorage.getItem("user") || "{}");
   useEffect(() => {
     if (user.username) {
@@ -21,13 +23,14 @@ const Intro = () => {
   return (
     <>
       <Navbar />
-      <Hero />
+      <Hero setOpen={setDialogOpen} />
       <SectionOne />
       <SectionTwo />
       <SectionThree />
       <SectionFour />
       <Faq />
       <Footer />
+      <RequestDialog open={dialogOpen} setOpen={setDialogOpen} />
     </>
   );
 };
