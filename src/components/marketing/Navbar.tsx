@@ -5,18 +5,17 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import IconButton from "@mui/material/IconButton";
 import Menu from "@mui/material/Menu";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import MenuIcon from "@mui/icons-material/Menu";
-import { AuthContext } from "./Main";
 
-const pages = ["Logout"];
+const pages = ["Login"];
 
 function ResponsiveAppBar() {
-  const { signOut } = React.useContext(AuthContext);
+  const navigate = useNavigate();
 
   const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(
     null
@@ -34,18 +33,20 @@ function ResponsiveAppBar() {
     <AppBar position="static" elevation={0}>
       <Container sx={{ width: { xs: "100%", lg: "1200px" } }}>
         <Toolbar disableGutters>
-          <Typography
-            variant="h6"
-            noWrap
-            sx={{
-              mr: 2,
-              fontWeight: 400,
-              fontSize: "1.7rem",
-              letterSpacing: ".3rem",
-            }}
-          >
-            AGRISYNC
-          </Typography>
+          <Link to="/intro">
+            <Typography
+              variant="h6"
+              noWrap
+              sx={{
+                mr: 2,
+                fontWeight: 400,
+                fontSize: "1.7rem",
+                letterSpacing: ".3rem",
+              }}
+            >
+              AGRISYNC
+            </Typography>
+          </Link>
           <Box
             sx={{
               flexGrow: 1,
@@ -54,22 +55,10 @@ function ResponsiveAppBar() {
             }}
           >
             {pages.map((page) => {
-              if (page == "Logout") {
-                return (
-                  <Button
-                    key={page}
-                    onClick={signOut}
-                    sx={{ my: 2, color: "white", display: "block" }}
-                  >
-                    {page}
-                  </Button>
-                );
-              }
               return (
-                <Link to={"/" + page}>
+                <Link to={"/home"}>
                   <Button
                     key={page}
-                    onClick={page === "Logout" ? signOut : handleCloseUserMenu}
                     sx={{ my: 2, color: "white", display: "block" }}
                   >
                     {page}

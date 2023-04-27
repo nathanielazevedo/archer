@@ -1,5 +1,5 @@
 import { Box, Button, Typography } from "@mui/material";
-import hero from "../assets/hero.png";
+import { hero } from "../../assets";
 
 const Hero = ({ setOpen }: { setOpen: (val: boolean) => void }) => {
   return (

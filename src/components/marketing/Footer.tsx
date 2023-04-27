@@ -1,5 +1,5 @@
 import { Box, Typography } from "@mui/material";
-import polygons from "../assets/polygons.png";
+import { polygons } from "../../assets";
 
 const Footer = () => {
   return (
@@ -32,7 +32,7 @@ const Footer = () => {
               letterSpacing: ".3rem",
             }}
           >
-            ARCHER
+            AGRISYNC
           </Typography>
           <Typography
             sx={{

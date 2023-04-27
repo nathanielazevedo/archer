@@ -1,46 +1,11 @@
 import { Box, Button, Typography } from "@mui/material";
 import { CartesianGrid, Line, LineChart, Tooltip, XAxis } from "recharts";
+import { globalStyles } from "../../styles";
+import { constants } from "../../constants";
 
 const SectionFour = ({ setOpen }: { setOpen: (val: boolean) => void }) => {
-  const data = [
-    {
-      name: "5/10",
-      main_ranch: 4,
-    },
-    {
-      name: "5/17",
-      main_ranch: 6,
-    },
-    {
-      name: "5/24",
-      main_ranch: 4,
-    },
-    {
-      name: "5/31",
-      main_ranch: 5,
-    },
-    {
-      name: "6/7",
-      main_ranch: 7,
-    },
-    {
-      name: "6/14",
-      main_ranch: 5,
-    },
-    {
-      name: "6/21",
-      main_ranch: 6,
-    },
-  ];
   return (
-    <Box
-      sx={{
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        padding: "150px 0",
-      }}
-    >
+    <Box sx={styles.container}>
       <Box
         sx={{
           display: "flex",
@@ -52,7 +17,7 @@ const SectionFour = ({ setOpen }: { setOpen: (val: boolean) => void }) => {
           alignItems: "center",
         }}
       >
-        <LineChart width={350} height={300} data={data}>
+        <LineChart width={350} height={300} data={constants.marketingGraph}>
           <CartesianGrid strokeDasharray="3 3" />
           <XAxis dataKey="name" />
           <Tooltip />
@@ -84,8 +49,7 @@ const SectionFour = ({ setOpen }: { setOpen: (val: boolean) => void }) => {
               height: "50px",
               fontSize: "1rem",
               marginTop: "20px",
-              background:
-                "radial-gradient(926px at 2.7% 11%, #30a7d0 0%, rgb(178, 31, 102) 90%)",
+              background: globalStyles.gradientBg,
             }}
             color="success"
           >
@@ -98,3 +62,12 @@ const SectionFour = ({ setOpen }: { setOpen: (val: boolean) => void }) => {
 };
 
 export default SectionFour;
+
+const styles = {
+  container: {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    padding: "150px 0",
+  },
+};

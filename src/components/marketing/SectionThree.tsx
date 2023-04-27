@@ -1,5 +1,5 @@
 import { Box, Button, Typography } from "@mui/material";
-import Fields from "./Fields";
+import Fields from "../Fields";
 
 const SectionThree = ({ setOpen }: { setOpen: (val: boolean) => void }) => {
   return (

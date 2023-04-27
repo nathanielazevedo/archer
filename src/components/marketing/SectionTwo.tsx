@@ -1,8 +1,5 @@
 import { Box, Button, Card, Typography } from "@mui/material";
-import polygons from "../assets/polygons.png";
-import creator from "../assets/creator.png";
-import mobile from "../assets/mobile.png";
-import web from "../assets/web.png";
+import { polygons, creator, mobile, web } from "../../assets";
 
 const SectionTwo = ({ setOpen }: { setOpen: (val: boolean) => void }) => {
   const cards = [
@@ -26,21 +23,8 @@ const SectionTwo = ({ setOpen }: { setOpen: (val: boolean) => void }) => {
     },
   ];
   return (
-    <Box
-      sx={{
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "center",
-        alignItems: "center",
-        padding: { xs: "150px 0", lg: "100px" },
-        backgroundColor: "#060816",
-      }}
-    >
-      <Box
-        sx={{
-          width: { xs: "90%", lg: "1200px" },
-        }}
-      >
+    <Box sx={styles.container}>
+      <Box sx={{ width: { xs: "90%", lg: "1200px" } }}>
         <Box
           sx={{
             display: "flex",
@@ -173,3 +157,14 @@ const SectionTwo = ({ setOpen }: { setOpen: (val: boolean) => void }) => {
 };
 
 export default SectionTwo;
+
+const styles = {
+  container: {
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center",
+    padding: { xs: "150px 0", lg: "100px" },
+    backgroundColor: "#060816",
+  },
+};
