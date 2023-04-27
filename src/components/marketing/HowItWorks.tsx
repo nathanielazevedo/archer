@@ -1,27 +1,9 @@
+import { polygons } from "../../assets";
+import { constants } from "../../constants";
+import { globalStyles } from "../../styles";
 import { Box, Button, Card, Typography } from "@mui/material";
-import { polygons, creator, mobile, web } from "../../assets";
 
 const SectionTwo = ({ setOpen }: { setOpen: (val: boolean) => void }) => {
-  const cards = [
-    {
-      title: "Install",
-      description:
-        "Install Archer in your field. Archer is solar powered and completely wireless. No need to run power or ethernet cables.",
-      icon: web,
-    },
-    {
-      title: "Connect",
-      description:
-        "Connect Archer to your network. Archer will send you notifications when your irrigation is done.",
-      icon: mobile,
-    },
-    {
-      title: "Retrieve",
-      description:
-        "Retrieve your Archer from the field. Archer will send you a notification when it's battery is low.",
-      icon: creator,
-    },
-  ];
   return (
     <Box sx={styles.container}>
       <Box sx={{ width: { xs: "90%", lg: "1200px" } }}>
@@ -54,8 +36,7 @@ const SectionTwo = ({ setOpen }: { setOpen: (val: boolean) => void }) => {
               sx={{
                 height: "50px",
                 marginTop: "20px",
-                background:
-                  "radial-gradient(926px at 2.7% 11%, #30a7d0 0%, rgb(178, 31, 102) 90%)",
+                background: globalStyles.gradientBg,
               }}
             >
               Request Access
@@ -86,7 +67,7 @@ const SectionTwo = ({ setOpen }: { setOpen: (val: boolean) => void }) => {
             flexDirection: { xs: "column", lg: "row" },
           }}
         >
-          {cards.map((card, i) => {
+          {constants.marketingCards.map((card, i) => {
             return (
               <Box
                 sx={{
@@ -109,8 +90,7 @@ const SectionTwo = ({ setOpen }: { setOpen: (val: boolean) => void }) => {
                     justifyContent: "center",
                     alignItems: "center",
                     zIndex: 1,
-                    background:
-                      "radial-gradient(926px at 2.7% 11%, #30a7d0 0%, rgb(178, 31, 102) 90%)",
+                    background: globalStyles.gradientBg,
                   }}
                 >
                   <h4>{i + 1}</h4>
