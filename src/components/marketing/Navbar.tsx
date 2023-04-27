@@ -1,22 +1,20 @@
 import * as React from "react";
-import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
-import Toolbar from "@mui/material/Toolbar";
-import Typography from "@mui/material/Typography";
-import Container from "@mui/material/Container";
-import Button from "@mui/material/Button";
-import { Link, useNavigate } from "react-router-dom";
-import IconButton from "@mui/material/IconButton";
 import Menu from "@mui/material/Menu";
+import { Link } from "react-router-dom";
+import AppBar from "@mui/material/AppBar";
+import Button from "@mui/material/Button";
+import Toolbar from "@mui/material/Toolbar";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
+import Container from "@mui/material/Container";
 import MenuIcon from "@mui/icons-material/Menu";
+import IconButton from "@mui/material/IconButton";
+import Typography from "@mui/material/Typography";
 
 const pages = ["Login"];
 
-function ResponsiveAppBar() {
-  const navigate = useNavigate();
-
+const NavBar = () => {
   const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(
     null
   );
@@ -31,29 +29,14 @@ function ResponsiveAppBar() {
 
   return (
     <AppBar position="static" elevation={0}>
-      <Container sx={{ width: { xs: "100%", lg: "1200px" } }}>
+      <Container sx={styles.container}>
         <Toolbar disableGutters>
           <Link to="/intro">
-            <Typography
-              variant="h6"
-              noWrap
-              sx={{
-                mr: 2,
-                fontWeight: 400,
-                fontSize: "1.7rem",
-                letterSpacing: ".3rem",
-              }}
-            >
+            <Typography variant="h6" noWrap sx={styles.name}>
               AGRISYNC
             </Typography>
           </Link>
-          <Box
-            sx={{
-              flexGrow: 1,
-              display: { xs: "none", lg: "flex" },
-              justifyContent: "flex-end",
-            }}
-          >
+          <Box sx={styles.linksContainer}>
             {pages.map((page) => {
               return (
                 <Link to={"/home"}>
@@ -67,14 +50,7 @@ function ResponsiveAppBar() {
               );
             })}
           </Box>
-
-          <Box
-            sx={{
-              flexGrow: 1,
-              display: { xs: "flex", lg: "none" },
-              justifyContent: "flex-end",
-            }}
-          >
+          <Box sx={styles.menuContainer}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
                 <MenuIcon sx={{ color: "white" }} />
@@ -96,7 +72,7 @@ function ResponsiveAppBar() {
               open={Boolean(anchorElUser)}
               onClose={handleCloseUserMenu}
             >
-              {["Login"].map((page) => (
+              {pages.map((page) => (
                 <MenuItem key={page} onClick={handleCloseUserMenu}>
                   <Link to={"/" + page}>
                     <Typography textAlign="center" sx={{ color: "black" }}>
@@ -111,5 +87,27 @@ function ResponsiveAppBar() {
       </Container>
     </AppBar>
   );
-}
-export default ResponsiveAppBar;
+};
+export default NavBar;
+
+const styles = {
+  container: {
+    width: { xs: "100%", lg: "1200px" },
+  },
+  name: {
+    mr: 2,
+    fontWeight: 400,
+    fontSize: "1.7rem",
+    letterSpacing: ".3rem",
+  },
+  linksContainer: {
+    flexGrow: 1,
+    display: { xs: "none", lg: "flex" },
+    justifyContent: "flex-end",
+  },
+  menuContainer: {
+    flexGrow: 1,
+    display: { xs: "flex", lg: "none" },
+    justifyContent: "flex-end",
+  },
+};
