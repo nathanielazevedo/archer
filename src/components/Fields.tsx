@@ -4,7 +4,6 @@ import AccordionDetails from "@mui/material/AccordionDetails";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import Typography from "@mui/material/Typography";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import FieldCreateForm from "../ui-components/FieldCreateForm";
 
 export default function ControlledAccordions() {
   const [expanded, setExpanded] = React.useState<string | false>(false);
@@ -102,9 +101,6 @@ export default function ControlledAccordions() {
             </Typography>
           </AccordionDetails>
         </Accordion>
-      </div>
-      <div>
-        <FieldCreateForm />
       </div>
     </>
   );
